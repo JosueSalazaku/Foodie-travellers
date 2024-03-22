@@ -13,7 +13,6 @@ function App() {
 
   return (
     <main>
-      <Header/>
       <h1 className="text-5xl text-orange-500">Hello world</h1>
     </main>
   );
