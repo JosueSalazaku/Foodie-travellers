@@ -14,6 +14,16 @@ export const singUp = (res, req) => {
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(req.body.password, salt);
 
+        const q = 'INSERT INTO users(username, email, password) VALUES (?)'
+        const values = [
+            req.body.username,
+            req.body.email,
+            hash,
+        ]
+        db.q(q, [values], (err, data) => {
+            if (err) return res.json(err)
+            return res.status(200).json("User has been created")
+        })
     })
 }
 
