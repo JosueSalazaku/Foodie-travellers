@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom'
+
 function SignIn() {
   return (
     <main className="h-screen flex flex-col justify-start items-center gap-20">
@@ -15,6 +17,7 @@ function SignIn() {
         </div>
         <button className="border border-purple-700">Log In </button>
       </form>
+      <span>Don't have an account? <Link to="/SignUp" className="text-blue-800 font-extrabold">Sign up!</Link></span>
     </main>
   );
 }
