@@ -1,13 +1,13 @@
 import express from 'express';
 import cors from 'cors';
 import multer from 'multer';
-import mysql from 'mysql';
+import mysql from 'mysql2';
 import dotenv from 'dotenv';
 
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
-const upload = multer({ dest: 'uploads/' });
+
 
 const db = mysql.createConnection({
     host: process.env.DB_HOST,
@@ -25,11 +25,12 @@ db.connect((err) => {
   });
 
 app.use(cors());
+const upload = multer({ dest: 'uploads/' });
 
 // Handle POST requests to '/api/posts'
 app.post('/api/posts', upload.single('image'), (req, res) => {
-    // Save post data and image path to database
-    // You'll need to implement this logic
+    const { title, content } = req.body;
+    const imagePath = req.file.path;
   });
   
 
