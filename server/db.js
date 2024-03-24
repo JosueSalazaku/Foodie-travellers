@@ -1,4 +1,3 @@
-import express  from 'express';
 import mysql from 'mysql2';
 import dotenv from 'dotenv';
 
@@ -16,7 +15,7 @@ db.connect((err) => {
       console.error('Error connecting to MySQL database:', err);
       return;
     }
-    console.log('Connected to MySQL database');
+    console.log('Josue Connected to MySQL database');
 });
   
 export default db;
