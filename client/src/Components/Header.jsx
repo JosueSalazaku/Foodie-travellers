@@ -8,7 +8,8 @@ function Header() {
         <li><Link to="/Explore">Explore</Link></li>
         <div className='flex flex-row gap-5'>
         <li><Link to="/LogIn">Log In</Link></li>
-        <li><Link to="/SignUp">Sign Up</Link></li>
+          <li><Link to="/SignUp">Sign Up</Link></li>
+          <li><Link to="/LogOut">Log Out</Link></li>
         </div>
       </ul>
     </header>

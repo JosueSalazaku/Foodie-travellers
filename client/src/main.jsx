@@ -5,6 +5,7 @@ import App from './App';
 import LogIn from './Pages/LogIn';
 import SignUp from './Pages/SignUp';
 import Explore from './Pages/Explore';
+import LogOut from './Pages/LogOut';
 import './App.css';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
@@ -18,6 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/Explore" element={<Explore />} />
         <Route path="/LogIn" element={<LogIn />} />
         <Route path="/SignUp" element={<SignUp />} />
+        <Route path="/LogOut" element={<LogOut />} />
       </Routes>
       <Footer/>
     </Router>
