@@ -1,6 +1,8 @@
 import db from "../db.js";
 import bcrypt from "bcryptjs";
- import jwt  from "jsonwebtoken";
+import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+dotenv.config();
 
 export const signUp = (req, res) => {
   // Check existing user
@@ -12,7 +14,6 @@ export const signUp = (req, res) => {
     if (data.length > 0) {
       return res.status(409).json({ error: "User already exists!" }); // User already exists, return a 409 Conflict status
     }
-
     // Hash the password
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(req.body.password, salt);
@@ -33,21 +34,34 @@ export const signUp = (req, res) => {
     console.log("Sign up successful"); // Add this line
   });
 };
+
+
 export const logIn = (req, res) => {
-  // Check USERS
-
-  const q = "SELECT * FROM users WHERE username = ?";
-  db.query(q, [req.body.username], (err, data) => {
-    if (err) return res.json(err);
-    if (data.length === 0) return res.status(404).json("User not found!");
-
-    //Check password
+     // Check USERS
+    const q = "SELECT * FROM users WHERE username = ?";
+    db.query(q, [req.body.username], (err, data) => {
+      if (err) {
+        console.error("Database error:", err);
+        return res.status(500).json({ error: "An internal server error occurred" });
+      }
+      if (data.length === 0) {
+        return res.status(404).json({ error: "User not found" });
+      }
+  
       const isPasswordCorrect = bcrypt.compareSync(req.body.password, data[0].password);
-      if (!isPasswordCorrect) return res.status(404).json("Wrong username or password")
-
-      const token = jwt.sign({id:date[0]})
-  });
-};
+      if (!isPasswordCorrect) {
+        return res.status(401).json({ error: "Wrong username or password" });
+      }
+  
+      const token = jwt.sign({ id: data[0].id }, process.env.JWT_SECRET);
+      const { password, ...other } = data[0];
+  
+      res.cookie("access_token", token, {
+        httpOnly: true
+      }).status(200).json(other);
+    });
+  };
+  
 
 export const logOut = (req, res) => {
   // Implement logout logic here
