@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios';
 
+
 function SingUp() {
   const [inputs, setInputs] = useState({
     username: "",
@@ -18,8 +19,8 @@ function SingUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const res = await axios.post("http://localhost:3000/api/signUp", inputs);
-        console.log(res);
+         await axios.post("http://localhost:3000/api/signUp", inputs);
+
     } catch (err) {
       setError(err.response.data);
     }
