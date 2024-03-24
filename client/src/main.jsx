@@ -9,7 +9,7 @@ import LogOut from './Pages/LogOut';
 import './App.css';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
-import { AuthContextProvider } from './Context/authContext';
+import  AuthContextProvider  from './Context/authContext';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
