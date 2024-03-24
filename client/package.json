@@ -2,7 +2,7 @@
   "name": "foodie-travellers",
   "private": true,
   "version": "0.0.0",
-  "proxy": "http://localhost:3000",
+  "proxy": "http://localhost:3000/api/",
   "type": "module",
   "scripts": {
     "dev": "vite",
