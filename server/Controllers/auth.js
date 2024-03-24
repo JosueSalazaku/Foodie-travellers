@@ -1,6 +1,6 @@
-import { json } from "express";
 import db from "../db.js";
-import bcrypt, { hash } from "bcryptjs";
+import bcrypt from "bcryptjs";
+ import jwt  from "jsonwebtoken";
 
 export const signUp = (req, res) => {
   // Check existing user
@@ -44,6 +44,8 @@ export const logIn = (req, res) => {
     //Check password
       const isPasswordCorrect = bcrypt.compareSync(req.body.password, data[0].password);
       if (!isPasswordCorrect) return res.status(404).json("Wrong username or password")
+
+      const token = jwt.sign({id:date[0]})
   });
 };
 
