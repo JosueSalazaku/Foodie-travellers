@@ -7,8 +7,9 @@ function SingUp() {
     username: "",
     email: "",
     password:"",
-
   })
+
+  const [err, setError] = useState(null)
   
   const handleChange =  e => {
     setInputs(prev=>({...prev,[e.target.name]: e.target.value }))
@@ -20,7 +21,7 @@ function SingUp() {
         const res = await axios.post("http://localhost:3000/api/signUp", inputs);
         console.log(res);
     } catch (err) {
-        console.log(err);
+      setError(err.response.data);
     }
 };
 
@@ -43,7 +44,9 @@ function SingUp() {
             className="border h-9 rounded-lg p-2 border-purple-700"
           />
         </div>
-        <button onClick={handleSubmit} className="border border-purple-700">Sign up</button>
+        <button onClick={handleSubmit} className="border h-9 mb-5 rounded-lg border-purple-700">Sign up</button>
+        {err && <p className='text-center font-bold text-red-500'>{err.error}</p>}
+
       </form>
       <span>Do you have an account? <Link to="/Login" className="text-blue-800 font-extrabold">Log in!</Link></span>
     </main>
