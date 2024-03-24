@@ -14,7 +14,7 @@ const upload = multer({ dest: "uploads/" });
 
 app.use(express.json());
 // posts route
-app.use("/api/posts", authRoutes);
+app.use("/api/signUp", authRoutes);
 app.use("/api/users", usersRoutes);
 app.use("/api/posts", postRoutes);
 
