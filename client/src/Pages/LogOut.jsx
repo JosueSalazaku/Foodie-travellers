@@ -1,8 +1,8 @@
-import { useNavigate } from "react-router"
+
 
 
 function LogOut() {
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
   return (
     <div>LogOut</div>

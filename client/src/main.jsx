@@ -1,5 +1,6 @@
+// main.jsx
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client'; // Import createRoot from 'react-dom/client'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import App from './App';
 import LogIn from './Pages/LogIn';
@@ -9,14 +10,14 @@ import LogOut from './Pages/LogOut';
 import './App.css';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
-import  AuthContextProvider  from './Context/authContext';
+import AuthContextProvider from './Context/authContext';
 
-
-ReactDOM.createRoot(document.getElementById('root')).render(
+const root = ReactDOM.createRoot(document.getElementById('root')); // Use createRoot
+root.render( // Render using root
   <React.StrictMode>
     <Router>
-      <Header /> {/* Render the Header component outside the Routes */}
-      <AuthContextProvider> {/* Wrap all routes with AuthContextProvider */}
+      <AuthContextProvider>
+        <Header /> {/* Render Header outside Routes for consistent access */}
         <Routes>
           <Route exact path="/" element={<App />} />
           <Route path="/Explore" element={<Explore />} />
@@ -25,7 +26,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/LogOut" element={<LogOut />} />
         </Routes>
       </AuthContextProvider>
-      <Footer/>
+      <Footer />
     </Router>
   </React.StrictMode>
 );

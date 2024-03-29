@@ -1,6 +1,5 @@
 import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
 import { useNavigate } from 'react-router'
 import { AuthContext } from '../Context/authContext'
 
@@ -12,7 +11,6 @@ function LogIn() {
 
   const [err, setError] = useState(null)
   const navigate = useNavigate()
-
   const { login } = useContext(AuthContext)
 
   
