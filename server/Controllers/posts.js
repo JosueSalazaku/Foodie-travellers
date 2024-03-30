@@ -2,6 +2,10 @@ export const getPosts = (req, res) => {
     res.json("From controller")
 }
 
+export const getPost = (req, res) => {
+    res.json("From controller")
+}
+
 export const addPost = (req, res) => {
     res.json("From controller")
 }
