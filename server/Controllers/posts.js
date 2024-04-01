@@ -1,4 +1,4 @@
-import db from "../db";
+import db from "../db.js";
 
 export const getPosts = (req, res) => {
     const q = res.query.category ? "SELECT * FROM posts WHERE category=?" :

@@ -11,22 +11,26 @@ import './App.css';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import AuthContextProvider from './Context/authContext';
+import Home from './Pages/Home';
+import UserPage from './Pages/UserPage';
 
-const root = ReactDOM.createRoot(document.getElementById('root')); // Use createRoot
-root.render( // Render using root
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+root.render(
   <React.StrictMode>
     <Router>
       <AuthContextProvider>
-        <Header /> {/* Render Header outside Routes for consistent access */}
+        <Header /> 
         <Routes>
           <Route exact path="/" element={<App />} />
+          <Route path="/Home" element={<Home />} />
           <Route path="/Explore" element={<Explore />} />
           <Route path="/LogIn" element={<LogIn />} />
           <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/UserPage" element={<UserPage/>}/>
           <Route path="/LogOut" element={<LogOut />} />
         </Routes>
       </AuthContextProvider>
       <Footer />
-    </Router>
+    </Router>s
   </React.StrictMode>
 );
