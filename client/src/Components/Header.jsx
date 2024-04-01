@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom"; // Assuming you're using react-router-dom for routing
+import { useContext } from "react";
+import { Link } from "react-router-dom"; 
 
 import { AuthContext } from "../Context/authContext";
 
@@ -8,10 +8,9 @@ function Header() {
 
   const handleLogout = async () => {
     try {
-      await logout(); // Call the logout function provided by the context
+      await logout(); 
     } catch (error) {
       console.error("Logout error:", error);
-      // Handle logout error (show error message, etc.)
     }
   };
 

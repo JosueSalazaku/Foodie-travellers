@@ -7,7 +7,7 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("/api/posts");
+        const res = await axios.get("http://localhost:3000/api/posts");
         setPosts(res.data);
       } catch (error) {
         console.log(error);
@@ -22,7 +22,9 @@ function Home() {
       {Array.isArray(posts) ? (
         <ul>
           {posts.map((post) => (
-            <li key={post.id}>{post.body}</li>
+            <li key={post.id}>
+              <p>{post.body}</p>
+            </li>
           ))}
         </ul>
       ) : (
