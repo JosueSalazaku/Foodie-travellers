@@ -11,7 +11,7 @@ import './App.css';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import AuthContextProvider from './Context/authContext';
-import UserPage from './Pages/UserPage';
+import Profile from './Pages/Profile';
 import Write from './Pages/Write';
 
 const root = ReactDOM.createRoot(document.getElementById('root')); 
@@ -27,7 +27,7 @@ root.render(
           <Route path="/Write" element={<Write />} />
           <Route path="/LogIn" element={<LogIn />} />
           <Route path="/SignUp" element={<SignUp />} />
-          <Route path="/UserPage" element={<UserPage/>}/>
+          <Route path="/Profile" element={<Profile/>}/>
           <Route path="/LogOut" element={<LogOut />} />
         </Routes>
       </AuthContextProvider>
