@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom"; 
-
+import { Link } from "react-router-dom";
+import Avatar from "react-avatar"; // Import the Avatar component
 import { AuthContext } from "../Context/authContext";
 
 function Header() {
@@ -8,7 +8,7 @@ function Header() {
 
   const handleLogout = async () => {
     try {
-      await logout(); 
+      await logout();
     } catch (error) {
       console.error("Logout error:", error);
     }
@@ -32,6 +32,12 @@ function Header() {
                   Log Out
                 </Link>
               </li>
+              {/* Display user's custom avatar if available, otherwise display a random avatar */}
+              {currentUser.avatar ? (
+                <Avatar src={currentUser.avatar} size="40" round />
+              ) : (
+                <Avatar name={currentUser.username} size="40" round />
+              )}
             </>
           ) : (
             <>

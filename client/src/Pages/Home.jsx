@@ -23,6 +23,7 @@ function Home() {
         <ul>
           {posts.map((post) => (
             <li key={post.id}>
+              <p>{post.title}</p>
               <p>{post.body}</p>
             </li>
           ))}
