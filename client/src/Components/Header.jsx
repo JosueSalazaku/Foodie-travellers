@@ -1,18 +1,10 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import Avatar from "react-avatar"; // Import the Avatar component
 import { AuthContext } from "../Context/authContext";
+import DropDownMenu from "./DropDownMenu";
 
 function Header() {
   const { currentUser, logout } = useContext(AuthContext);
-
-  const handleLogout = async () => {
-    try {
-      await logout();
-    } catch (error) {
-      console.error("Logout error:", error);
-    }
-  };
 
   return (
     <header className="w-screen h-20 flex flex-row px-10">
@@ -21,40 +13,25 @@ function Header() {
           <Link to="/">FOODIE TRAVELLERS</Link>
         </li>
         <li>
-        <div className="flex flex-row gap-10 justify-around items-center h-20">
-          <Link to="/Explore">Explore</Link>
+          <div className="flex gap-10">
+            <Link to="/Explore">Explore</Link>
             <Link to="/Write">Write</Link>
           </div>
-    
         </li>
-     
-        <div className="flex flex-row gap-10 justify-around items-center h-20">
+        <li>
           {currentUser ? (
-            <>
-              <span>{currentUser.username}</span>
-              <li>
-                <Link to="/LogOut" onClick={handleLogout}>
-                  Log Out
-                </Link>
-              </li>
-
-              {currentUser.avatar ? (
-                <Avatar src={currentUser.avatar} size="40" round  />
-              ) : (
-                <Avatar name={currentUser.username} size="40" round className="item-center" />
-              )}
-            </>
+            <DropDownMenu currentUser={currentUser} logout={logout} />
           ) : (
-            <>
+            <div className="flex flex-row gap-10 justify-around items-center h-20">
               <li>
                 <Link to="/LogIn">Log In</Link>
               </li>
               <li>
                 <Link to="/SignUp">Sign Up</Link>
               </li>
-            </>
+            </div>
           )}
-        </div>
+        </li>
       </ul>
     </header>
   );

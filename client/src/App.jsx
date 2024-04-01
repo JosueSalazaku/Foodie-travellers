@@ -18,10 +18,14 @@ function App() {
   }, []);
 
   return (
-    <main>
-      <h1 className="text-4xl font bold text-blue-400">
-        WELCOM TO FOODIES TRAVELLS !{" "}
+    
+    <main className="h-screen px-16 flex flex-col justify-start">
+      <h1 className="text-8xl font-black text-blue-400">
+        SHARE. <br />
+        EXPLORE. <br />
+        DISCOVER.
       </h1>
+      <h3 className="py-10 text-4xl">Discover stories that add nuance,<br /> complexity, and depth to your understanding of the world.</h3>
       {Array.isArray(posts) ? (
         <ul>
           {posts.map((post) => (
