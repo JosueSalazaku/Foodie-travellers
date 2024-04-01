@@ -11,8 +11,8 @@ import './App.css';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import AuthContextProvider from './Context/authContext';
-import Home from './Pages/Home';
 import UserPage from './Pages/UserPage';
+import Write from './Pages/Write';
 
 const root = ReactDOM.createRoot(document.getElementById('root')); 
 root.render(
@@ -22,8 +22,9 @@ root.render(
         <Header /> 
         <Routes>
           <Route exact path="/" element={<App />} />
-          <Route path="/Home" element={<Home />} />
+          <Route path="/Home" element={<App />} />
           <Route path="/Explore" element={<Explore />} />
+          <Route path="/Write" element={<Write />} />
           <Route path="/LogIn" element={<LogIn />} />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/UserPage" element={<UserPage/>}/>

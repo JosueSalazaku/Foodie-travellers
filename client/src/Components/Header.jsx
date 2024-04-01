@@ -15,15 +15,20 @@ function Header() {
   };
 
   return (
-    <header className="w-screen h-20 flex flex-row">
-      <ul className="w-screen flex flex-row justify-around items-center font-extrabold">
+    <header className="w-screen h-20 flex flex-row px-10">
+      <ul className="w-screen h-20 flex flex-row justify-between items-center font-extrabold">
         <li>
-          <Link to="/Home">Logo</Link>
+          <Link to="/">FOODIE TRAVELLERS</Link>
         </li>
         <li>
+        <div className="flex flex-row gap-10 justify-around items-center h-20">
           <Link to="/Explore">Explore</Link>
+            <Link to="/Write">Write</Link>
+          </div>
+    
         </li>
-        <div className="flex flex-row gap-5">
+     
+        <div className="flex flex-row gap-10 justify-around items-center h-20">
           {currentUser ? (
             <>
               <span>{currentUser.username}</span>
@@ -32,11 +37,11 @@ function Header() {
                   Log Out
                 </Link>
               </li>
-              {/* Display user's custom avatar if available, otherwise display a random avatar */}
+
               {currentUser.avatar ? (
-                <Avatar src={currentUser.avatar} size="40" round />
+                <Avatar src={currentUser.avatar} size="40" round  />
               ) : (
-                <Avatar name={currentUser.username} size="40" round />
+                <Avatar name={currentUser.username} size="40" round className="item-center" />
               )}
             </>
           ) : (
