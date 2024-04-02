@@ -7,7 +7,7 @@ function Header() {
   const { currentUser, logout } = useContext(AuthContext);
 
   return (
-    <header className="w-full px-16 h-20 flex flex-row justify-between bg-gradient-to-b backdrop-blur-sm bg-white/20">
+    <header className="w-full px-16 h-20 flex flex-row justify-between font-semibold">
       <ul className="w-full h-20 flex flex-row space-x-24 justify-between items-center bg-none">
         <li>
           <Link to="/">FOODIE TRAVELLERS</Link>

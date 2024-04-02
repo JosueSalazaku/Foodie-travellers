@@ -25,7 +25,7 @@ function App() {
         EXPLORE. <br />
         DISCOVER.
       </h1>
-      <h3 className="py-10 text-4xl">Discover stories that add nuance,<br /> complexity, and depth to your understanding of the world.</h3>
+      <h3 className="py-10 text-4xl">Discover stories, places to eat and drink<br /> and offcourse new places to travel to.</h3>
       {Array.isArray(posts) ? (
         <ul>
           {posts.map((post) => (

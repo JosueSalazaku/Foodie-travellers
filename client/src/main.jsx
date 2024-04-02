@@ -13,13 +13,14 @@ import Footer from './Components/Footer';
 import AuthContextProvider from './Context/authContext';
 import Profile from './Pages/Profile';
 import Write from './Pages/Write';
+import Library from './Pages/Library';
 
 const root = ReactDOM.createRoot(document.getElementById('root')); 
 root.render(
   <React.StrictMode>
     <Router>
       <AuthContextProvider>
-      <main className="h-screen flex flex-col justify-start bg-top bg-no-repeat bg-cover">
+      <main className="h-screen flex flex-col justify-start bg-top bg-no-repeat bg-contain">
         <Header /> 
         <Routes>
           <Route exact path="/" element={<App />} />
@@ -27,6 +28,7 @@ root.render(
           <Route path="/Explore" element={<Explore />} />
           <Route path="/Write" element={<Write />} />
           <Route path="/LogIn" element={<LogIn />} />
+          <Route path="/Library" element={<Library />} />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Profile" element={<Profile/>}/>
           <Route path="/LogOut" element={<LogOut />} />
