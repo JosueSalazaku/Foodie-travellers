@@ -19,7 +19,7 @@ function App() {
 
   return (
     
-    <main className="h-screen px-16 flex flex-col justify-start">
+    <div className="h-screen mt-10 px-16 flex flex-col justify-start ">
       <h1 className="text-8xl font-black text-blue-400">
         SHARE. <br />
         EXPLORE. <br />
@@ -38,7 +38,7 @@ function App() {
       ) : (
         <p>No posts available</p>
       )}
-    </main>
+    </div>
   );
 }
 

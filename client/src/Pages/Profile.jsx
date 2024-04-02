@@ -2,7 +2,7 @@
 
 function Profile() {
   return (
-    <div>UserPage</div>
+    <div className="px-16">Profile</div>
   )
 }
 

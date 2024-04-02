@@ -19,6 +19,7 @@ root.render(
   <React.StrictMode>
     <Router>
       <AuthContextProvider>
+      <main className="h-screen flex flex-col justify-start bg-top bg-no-repeat bg-cover">
         <Header /> 
         <Routes>
           <Route exact path="/" element={<App />} />
@@ -29,7 +30,8 @@ root.render(
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Profile" element={<Profile/>}/>
           <Route path="/LogOut" element={<LogOut />} />
-        </Routes>
+          </Routes>
+          </main>
       </AuthContextProvider>
       <Footer />
     </Router>s
