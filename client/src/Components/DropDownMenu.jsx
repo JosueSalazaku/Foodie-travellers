@@ -37,7 +37,7 @@ function DropDownMenu({ currentUser, logout }) {
       >
         {currentUser && (
           <>
-            <span>{currentUser.username}</span>
+            <span className="font-bold">{currentUser.username}</span>
             {currentUser.avatar ? (
               <Avatar src={currentUser.avatar} size="40" round />
             ) : (
