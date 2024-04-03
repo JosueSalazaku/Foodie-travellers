@@ -51,31 +51,50 @@ function DropDownMenu({ currentUser, logout }) {
           </>
         )}
       </button>
-      <div className={`absolute right-0 w-52 bg-white divide-y divide-gray-100 object-left rounded-lg shadow-md dark:bg-gray-700 dark:divide-gray-600 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>
+      <div
+        className={`absolute right-0 w-52 divide-y divide-gray-100 object-left rounded-lg shadow-md bg-blue-400 transition-opacity duration-300 ${
+          isOpen ? "opacity-100" : "opacity-0"
+        }`}
+      >
         {isOpen && (
           <>
             <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
               <div className="font-medium"></div>
               <div className="truncate">{currentUser.email}</div>
             </div>
-            <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownAvatarNameButton">
+            <ul
+              className="py-2 text-sm text-gray-700 dark:text-gray-200"
+              aria-labelledby="dropdownAvatarNameButton"
+            >
               <li>
-                <Link to="/Profile" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                <Link
+                  to="/Profile"
+                  className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
                   Profile
                 </Link>
               </li>
               <li>
-                <Link to="/Library" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                Library
+                <Link
+                  to="/Library"
+                  className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  Library
                 </Link>
               </li>
               <li>
-                <Link to="/Settings" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                Settings
+                <Link
+                  to="/Settings"
+                  className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  Settings
                 </Link>
               </li>
               <li>
-                <button onClick={handleLogout} className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                <button
+                  onClick={handleLogout}
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
                   Log Out
                 </button>
               </li>

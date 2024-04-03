@@ -9,13 +9,13 @@ function Header() {
 
   return (
     <header className="w-full px-16 h-20 flex flex-row justify-between items-center font-semibold">
-      <Link to="/">FOODIE TRAVELLERS</Link>
+      <Link to="/Home">FOODIE TRAVELLERS</Link>
       <div className="flex gap-10">
         <Link to="/Explore">Explore</Link>
         <Link to="/Write">Write</Link>
       </div>
 
-      <div className="flex flex-row items-center">
+      <div className="flex flex-row items-center gap-5">
         <MdOutlineLightMode />
         <MdOutlineDarkMode />
         
