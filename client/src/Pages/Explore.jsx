@@ -2,7 +2,9 @@
 
 function Explore() {
   return (
-    <div>Explore</div>
+    <main className="h-screen flex flex-col justify-start mx-20 dark:text-white">
+      Explore
+    </main>
   )
 }
 

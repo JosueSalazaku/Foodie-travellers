@@ -8,7 +8,7 @@ function Header() {
   const { currentUser, logout } = useContext(AuthContext);
 
   return (
-    <div className="w-full px-16 h-20 flex flex-row justify-between items-center font-semibold dark:text-white">
+    <nav className="w-full px-20 h-20 flex flex-row justify-between items-center font-semibold dark:text-white">
       <Link className="font-extrabold dark:text-white" to="/Home">FOODIE TRAVELLERS</Link>
       <div className="flex gap-10">
         <Link to="/Explore">Explore</Link>
@@ -30,7 +30,7 @@ function Header() {
           </>
         )}
       </div>
-    </div>
+    </nav>
   );
 }
 

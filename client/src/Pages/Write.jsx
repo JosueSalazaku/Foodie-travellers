@@ -1,6 +1,8 @@
 function Write() {
   return (
-    <div className="dark:text-white">Write</div>
+    <main className="h-screen flex flex-col justify-start mx-20 dark:text-white">
+      Write
+    </main>
   )
 }
 

@@ -18,7 +18,7 @@ function Home() {
 
   return (
     
-    <div className="h-screen flex flex-col justify-start dark:text-white">
+    <main className="h-screen flex flex-col justify-start mx-20 dark:text-white">
       <h1 className="text-8xl py-10 font-black text-blue-400">
         SHARE. <br />
         EXPLORE. <br />
@@ -37,7 +37,7 @@ function Home() {
       ) : (
         <p>No posts available</p>
       )}
-    </div>
+    </main>
   );
 }
 

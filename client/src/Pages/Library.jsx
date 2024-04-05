@@ -1,7 +1,9 @@
 
 function Library() {
   return (
-    <div className="dark:text-white">Library</div>
+    <main className="h-screen flex flex-col justify-start mx-20 dark:text-white">
+      Library
+    </main>
   )
 }
 
