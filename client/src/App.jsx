@@ -1,4 +1,5 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { DarkModeProvider } from './Context/DarkModeContext';
 import './App.css';
 
 import Header from "./Components/Header";
@@ -19,6 +20,7 @@ function App() {
     
     <Router>
       <AuthContextProvider>
+        <DarkModeProvider>
         <main className="h-screen flex flex-col justify-start bg-top bg-no-repeat dark:bg-neutral-900">
           <Header />
           <Routes>
@@ -32,7 +34,8 @@ function App() {
             <Route path="/Profile" element={<Profile />} />
             <Route path="/LogOut" element={<LogOut />} />
           </Routes>
-        </main>
+          </main>
+        </DarkModeProvider>
       </AuthContextProvider>
       <Footer />
     </Router>
