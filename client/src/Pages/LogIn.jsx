@@ -28,7 +28,7 @@ function LogIn() {
   };
 
   return (
-    <main className="h-screen flex flex-col justify-start items-center gap-20">
+    <main className="h-screen flex flex-col justify-start items-center gap-20 dark:text-white">
       <h1 className="text-6xl">Welcome Back Traveller</h1>
       <form action="" className="border flex flex-col h-96 w-96 ">
         <div className="gap-5 flex flex-col justify-center mb-5">

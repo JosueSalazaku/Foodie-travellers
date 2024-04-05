@@ -2,7 +2,7 @@
 
 function Profile() {
   return (
-    <div>Profile</div>
+    <div className="dark:text-white">Profile</div>
   )
 }
 

@@ -1,6 +1,6 @@
 function Write() {
   return (
-    <div>Write</div>
+    <div className="dark:text-white">Write</div>
   )
 }
 

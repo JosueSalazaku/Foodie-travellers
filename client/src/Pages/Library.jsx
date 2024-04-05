@@ -1,7 +1,7 @@
 
 function Library() {
   return (
-    <div>Library</div>
+    <div className="dark:text-white">Library</div>
   )
 }
 

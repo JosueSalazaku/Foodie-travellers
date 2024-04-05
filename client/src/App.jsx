@@ -19,7 +19,7 @@ function App() {
     
     <Router>
       <AuthContextProvider>
-        <main className="h-screen flex flex-col justify-start bg-top bg-no-repeat bg-contain">
+        <main className="h-screen flex flex-col justify-start bg-top bg-no-repeat bg-contain dark:bg-black">
           <Header />
           <Routes>
             <Route path="/Home" element={<Home />} />

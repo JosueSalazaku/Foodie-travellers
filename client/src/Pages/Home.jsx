@@ -13,14 +13,13 @@ function Home() {
         console.log(error);
       }
     };
-
     fetchData();
   }, []);
 
   return (
     
-    <div className="h-screen mt-10 px-16 flex flex-col justify-start ">
-      <h1 className="text-8xl font-black text-blue-400">
+    <div className="h-screen flex flex-col justify-start dark:text-white">
+      <h1 className="text-8xl py-10 font-black text-blue-400">
         SHARE. <br />
         EXPLORE. <br />
         DISCOVER.
