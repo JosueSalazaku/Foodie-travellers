@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useDarkMode } from "../Context/DarkModeContext.jsx";
 
 function Home() {
   const [posts, setPosts] = useState([]);
+  const { darkMode } = useDarkMode(); // Consume dark mode state
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,14 +19,13 @@ function Home() {
   }, []);
 
   return (
-    
-    <main className="h-screen flex flex-col justify-start mx-20 dark:text-white">
+    <main className={`h-screen flex flex-col justify-start mx-20 ${darkMode ? 'dark:text-white' : ''}`}>
       <h1 className="text-8xl py-10 font-black text-blue-400">
         SHARE. <br />
         EXPLORE. <br />
         DISCOVER.
       </h1>
-      <h3 className="py-10 text-4xl">Discover stories, places to eat and drink<br /> and offcourse new places to travel to.</h3>
+      <h3 className="py-10 text-4xl">Discover stories, places to eat and drink<br /> and of course new places to travel to.</h3>
       {Array.isArray(posts) ? (
         <ul>
           {posts.map((post) => (
