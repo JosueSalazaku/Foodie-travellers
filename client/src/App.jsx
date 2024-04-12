@@ -31,7 +31,7 @@ function App() {
     <DarkModeProvider>
       <Router>
         <AuthContextProvider>
-        <main className={darkMode ? "h-screen bg-neutral-900 text-white" : "h-screen bg-white text-gray-900"}>
+        <main className={darkMode ? "h-screen bg-neutral-900 bg-top bg-cover bg-no-repeat text-white" : "h-screen bg-white bg-top bg-cover bg-no-repeat text-gray-900"}>
             <Header  darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
             <Routes>
               <Route path="/Home" element={<Home />} />
