@@ -1,5 +1,4 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import { DarkModeProvider } from './Context/DarkModeContext.jsx';
 import './App.css';
 
 import Header from "./Components/Header";
@@ -28,7 +27,6 @@ function App() {
 
 
   return (
-    <DarkModeProvider>
       <Router>
         <AuthContextProvider>
         <main className={darkMode ? "h-screen bg-neutral-900 bg-top bg-cover bg-no-repeat text-white transition-all duration-500" : "h-screen bg-white bg-top bg-cover bg-no-repeat text-gray-900 transition-all duration-500"}>
@@ -49,7 +47,6 @@ function App() {
         </AuthContextProvider>
         <Footer />
       </Router>
-    </DarkModeProvider>
   );
 }
 

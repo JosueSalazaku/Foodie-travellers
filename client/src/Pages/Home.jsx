@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useDarkMode } from "../Context/DarkModeContext.jsx";
+
 import { AuthContext } from "../Context/authContext.jsx";
 import { useContext } from "react";
 
 function Home() {
   const [posts, setPosts] = useState([]);
-  const { darkMode } = useDarkMode(); // Consume dark mode state
+
   const { currentUser } = useContext(AuthContext); // Consume user authentication state
 
   useEffect(() => {
@@ -22,7 +22,7 @@ function Home() {
   }, []);
 
   return (
-    <main className={`h-screen flex flex-col justify-start mx-20 ${darkMode ? 'dark:text-white' : ''}`}>
+    <main className="h-screen flex flex-col justify-start mx-20">
       {!currentUser && (
         <>
           <h1 className="text-8xl py-10 font-black text-blue-400">

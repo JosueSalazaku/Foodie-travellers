@@ -1,6 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import Avatar from "react-avatar";
+import { PiUserLight } from "react-icons/pi";
+import { RxBookmark } from "react-icons/rx";
 import { Link } from "react-router-dom";
+
+
 
 function DropDownMenu({ currentUser, logout }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,17 +73,17 @@ function DropDownMenu({ currentUser, logout }) {
               <li>
                 <Link
                   to="/Profile"
-                  className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  className="flex flex-row justify-start items-center gap-4 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                 >
-                  Profile
+                  <PiUserLight /> Profile
                 </Link>
               </li>
               <li>
                 <Link
                   to="/Library"
-                  className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  className="flex flex-row justify-start items-center gap-4 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                 >
-                  Library
+                 <RxBookmark />  Library
                 </Link>
               </li>
               <li>
