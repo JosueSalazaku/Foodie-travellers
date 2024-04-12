@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Avatar from "react-avatar";
-import { PiUserLight } from "react-icons/pi";
+import { AiOutlineUser } from "react-icons/ai";
+import { IoSettingsOutline } from "react-icons/io5";
 import { RxBookmark } from "react-icons/rx";
 import { Link } from "react-router-dom";
 
@@ -75,7 +76,7 @@ function DropDownMenu({ currentUser, logout }) {
                   to="/Profile"
                   className="flex flex-row justify-start items-center gap-4 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                 >
-                  <PiUserLight /> Profile
+                  <AiOutlineUser style={{ fontSize: "24px" }}  /> Profile
                 </Link>
               </li>
               <li>
@@ -83,15 +84,15 @@ function DropDownMenu({ currentUser, logout }) {
                   to="/Library"
                   className="flex flex-row justify-start items-center gap-4 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                 >
-                 <RxBookmark />  Library
+                 <RxBookmark style={{ fontSize: "24px" }}  />  Library
                 </Link>
               </li>
               <li>
                 <Link
                   to="/Settings"
-                  className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  className="flex flex-row justify-start items-center gap-4 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                 >
-                  Settings
+                  <IoSettingsOutline style={{ fontSize: "24px" }}  /> Settings
                 </Link>
               </li>
               <li>
