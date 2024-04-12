@@ -3,6 +3,7 @@ import axios from 'axios';
 
 export const AuthContext = createContext();
 
+// eslint-disable-next-line react/prop-types
 const AuthContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(localStorage.getItem('user')) || null

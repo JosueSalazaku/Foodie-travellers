@@ -5,14 +5,15 @@ import DropDownMenu from "./DropDownMenu";
 import { MdOutlineLightMode, MdOutlineDarkMode } from "react-icons/md";
 import { IoNotificationsOutline } from "react-icons/io5";
 
+// eslint-disable-next-line react/prop-types
 function Header({ darkMode, toggleDarkMode }) {
   const { currentUser, logout } = useContext(AuthContext);
 
   return (
 
-      <nav className="w-full px-20 h-20 flex flex-row justify-between items-center font-semibold dark:bg-black dark:text-white">
-        <Link className="font-extrabold dark:text-white" to="/Home">
-          FOODIE TRAVELLERS
+      <nav className="w-full px-20 h-32 flex flex-row justify-between items-center font-semibold dark:bg-black dark:text-white">
+        <Link className="font-extrabold text-2xl dark:text-white" to="/Home">
+          FOODIE <br /> TRAVELLERS
         </Link>
         <div className="flex gap-10">
           {currentUser && (
@@ -24,7 +25,7 @@ function Header({ darkMode, toggleDarkMode }) {
         </div>
 
         <div className="flex flex-row items-center gap-5">
-          <button onClick={toggleDarkMode}>
+          <button className="px-2 transition duration-150" onClick={toggleDarkMode}>
             {darkMode ? <MdOutlineLightMode /> : <MdOutlineDarkMode />}
           </button>
 
@@ -33,14 +34,14 @@ function Header({ darkMode, toggleDarkMode }) {
               <button>
                 <Link to="/Notifications"><IoNotificationsOutline /></Link>
               </button>
-              <DropDownMenu currentUser={currentUser} logout={logout} />
+              <DropDownMenu className="dark:text-white" currentUser={currentUser} logout={logout} />
             </>
           ) : (
             <>
               <Link to="/LogIn">Log In</Link>
               <Link
                 to="/SignUp"
-                className="border border-slate-800 p-2 rounded-xl hover:bg-slate-800 hover:text-white dark:text-white"
+                className="bg-blue-400 py-2 px-4 rounded-xl hover:bg-slate-800 hover:text-white dark:text-white"
               >
                 Sign Up
               </Link>
