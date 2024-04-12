@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useDarkMode } from "../Context/DarkModeContext.jsx";
+import { AuthContext } from "../Context/authContext.jsx";
+import { useContext } from "react";
 
 function Home() {
   const [posts, setPosts] = useState([]);
   const { darkMode } = useDarkMode(); // Consume dark mode state
+  const { currentUser } = useContext(AuthContext); // Consume user authentication state
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,24 +23,28 @@ function Home() {
 
   return (
     <main className={`h-screen flex flex-col justify-start mx-20 ${darkMode ? 'dark:text-white' : ''}`}>
-      <h1 className="text-8xl py-10 font-black text-blue-400">
-        SHARE. <br />
-        EXPLORE. <br />
-        DISCOVER.
-      </h1>
-      <h3 className="py-10 text-4xl">Discover stories, places to eat and drink<br /> and of course new places to travel to.</h3>
-      {Array.isArray(posts) ? (
+      {!currentUser && (
+        <>
+          <h1 className="text-8xl py-10 font-black text-blue-400">
+            SHARE. <br />
+            EXPLORE. <br />
+            DISCOVER.
+          </h1>
+          <h3 className="py-10 text-4xl">Discover stories, places to eat and drink<br /> and of course new places to travel to.</h3>
+        </>
+      )}
+      {currentUser && Array.isArray(posts) && (
         <ul>
           {posts.map((post) => (
             <li key={post.id}>
+              <p className="font-bold">{currentUser.username }</p>
               <p>{post.title}</p>
               <p>{post.body}</p>
             </li>
           ))}
         </ul>
-      ) : (
-        <p>No posts available</p>
       )}
+      {!currentUser && <p>Please log in to see posts</p>}
     </main>
   );
 }

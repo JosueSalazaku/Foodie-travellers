@@ -15,14 +15,24 @@ import SignUp from "./Pages/SignUp";
 import Explore from "./Pages/Explore";
 import LogOut from "./Pages/LogOut";
 import Notifications from "./Pages/Notifications.jsx";
+import { useState } from "react";
+
+
+
 
 function App() {
+    const [darkMode, setDarkMode] = useState(false);
+    const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
+
   return (
     <DarkModeProvider>
       <Router>
         <AuthContextProvider>
-          <main className="h-screen flex flex-col justify-start bg-top bg-no-repeat dark:bg-neutral-900">
-            <Header  />
+        <main className={darkMode ? "h-screen bg-neutral-900 text-white" : "h-screen bg-white text-gray-900"}>
+            <Header  darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
             <Routes>
               <Route path="/Home" element={<Home />} />
               <Route path="/Explore" element={<Explore />} />

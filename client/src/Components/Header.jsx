@@ -3,15 +3,13 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../Context/authContext.jsx";
 import DropDownMenu from "./DropDownMenu";
 import { MdOutlineLightMode, MdOutlineDarkMode } from "react-icons/md";
-import { useDarkMode } from "../Context/DarkModeContext.jsx";
-import { IoNotifications } from "react-icons/io5";
+import { IoNotificationsOutline } from "react-icons/io5";
 
-function Header() {
+function Header({ darkMode, toggleDarkMode }) {
   const { currentUser, logout } = useContext(AuthContext);
-  const { darkMode, toggleDarkMode } = useDarkMode();
 
   return (
-    <div className={`${darkMode && "dark"}`}>
+
       <nav className="w-full px-20 h-20 flex flex-row justify-between items-center font-semibold dark:bg-black dark:text-white">
         <Link className="font-extrabold dark:text-white" to="/Home">
           FOODIE TRAVELLERS
@@ -33,7 +31,7 @@ function Header() {
           {currentUser ? (
             <>
               <button>
-                <Link to="/Notifications"><IoNotifications /></Link>
+                <Link to="/Notifications"><IoNotificationsOutline /></Link>
               </button>
               <DropDownMenu currentUser={currentUser} logout={logout} />
             </>
@@ -50,7 +48,6 @@ function Header() {
           )}
         </div>
       </nav>
-    </div>
   );
 }
 
