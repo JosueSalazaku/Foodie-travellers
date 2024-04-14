@@ -4,7 +4,6 @@ import { addPost, deletePost, getPosts, updatePost } from "../Controllers/posts.
 
 const router = express.Router();
 
-
 //posts route
 router.get("/", getPosts); 
 router.get("/:id", getPosts); 

@@ -37,12 +37,11 @@ function DropDownMenu({ currentUser, logout }) {
     <div ref={dropdownRef} className="relative">
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="flex justify-end w-44 items-center gap-5 text-sm pe-1 font-medium text-gray-900 rounded-full"
+        className="flex justify-end w-20 items-center gap-5 text-sm pe-1 font-medium text-gray-900 rounded-full"
         type="button"
       >
         {currentUser && (
           <>
-            <span className="font-bold dark:text-white">{currentUser.username}</span>
             {currentUser.avatar ? (
               <Avatar src={currentUser.avatar} size="40" round />
             ) : (
@@ -64,8 +63,8 @@ function DropDownMenu({ currentUser, logout }) {
         {isOpen && (
           <>
             <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
-              <div className="font-medium"></div>
-              <div className="truncate">{currentUser.email}</div>
+              <div className="font-bold">{currentUser.username}</div>
+              <div className="truncate dark:text-white">{currentUser.email}</div>
             </div>
             <ul
               className="py-2 text-sm text-gray-700 dark:text-gray-200"

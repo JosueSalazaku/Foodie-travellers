@@ -8,6 +8,7 @@ import { IoNotificationsOutline } from "react-icons/io5";
 // eslint-disable-next-line react/prop-types
 function Header({ darkMode, toggleDarkMode }) {
   const { currentUser, logout } = useContext(AuthContext);
+  // console.log(currentUser)
 
   return (
 
@@ -15,7 +16,7 @@ function Header({ darkMode, toggleDarkMode }) {
         <Link className="font-extrabold text-2xl dark:text-white" to="/Home">
           FOODIE <br /> TRAVELLERS
         </Link>
-        <div className="flex gap-10">
+        <div className="flex gap-10 text-xl">
           {currentUser && (
             <>
               <Link to="/Explore">Explore</Link>
@@ -24,15 +25,15 @@ function Header({ darkMode, toggleDarkMode }) {
           )}
         </div>
 
-        <div className="flex flex-row items-center gap-5">
+        <div className="flex flex-row items-center gap-5 text-xl">
           <button className="px-2 transition duration-150" onClick={toggleDarkMode}>
-            {darkMode ? <MdOutlineLightMode /> : <MdOutlineDarkMode />}
+            {darkMode ? <MdOutlineLightMode style={{ fontSize: "20px" }}  /> : <MdOutlineDarkMode style={{ fontSize: "20px" }}  />}
           </button>
 
           {currentUser ? (
             <>
               <button>
-                <Link to="/Notifications"><IoNotificationsOutline /></Link>
+                <Link to="/Notifications"><IoNotificationsOutline style={{ fontSize: "20px" }}  /></Link>
               </button>
               <DropDownMenu className="dark:text-white" currentUser={currentUser} logout={logout} />
             </>
