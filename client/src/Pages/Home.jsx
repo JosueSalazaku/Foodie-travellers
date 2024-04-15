@@ -4,6 +4,7 @@ import axios from "axios";
 import { AuthContext } from "../Context/authContext.jsx";
 import { useContext } from "react";
 import Avatar from "react-avatar";
+import Topics from "../Components/Topics.jsx";
 
 
 // eslint-disable-next-line react/prop-types
@@ -36,13 +37,16 @@ function Home({darkMode}) {
           <h3 className="py-10 text-4xl">Discover stories, places to eat and drink<br /> and of course new places to travel to.</h3>
         </>
       )}
+
+      <Topics/>
+
       {currentUser && Array.isArray(posts) && (
-        <div className={darkMode ? "border-y-2 py-20 border-black" : " border-y-2 py-20 "}>
+        <div className={darkMode ? "border-b-2 py-12 border-white " : " border-b-2 py-12 border-blue-900 "}>
         <ul>
           {posts.map((post) => (
             <li key={post.id}>
               <div>
-                <div className="flex flex-row space-x-4 items-center mb-3">
+                <div className="flex flex-row space-x-4 items-center mb-5">
                 <Avatar src={currentUser.avatar} size="30" round />
                   <p className="font-bold">{currentUser.username }</p>
                   <p>{post.date}</p>
