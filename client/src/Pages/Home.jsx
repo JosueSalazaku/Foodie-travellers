@@ -4,7 +4,8 @@ import axios from "axios";
 import { AuthContext } from "../Context/authContext.jsx";
 import { useContext } from "react";
 
-function Home() {
+// eslint-disable-next-line react/prop-types
+function Home({darkMode}) {
   const [posts, setPosts] = useState([]);
 
   const { currentUser } = useContext(AuthContext); // Consume user authentication state
@@ -22,7 +23,7 @@ function Home() {
   }, []);
 
   return (
-    <main className="h-screen flex flex-col justify-start mx-20">
+    <main className={darkMode ? "h-screen flex flex-col justify-start mx-20 mt-12" : "h-screen flex flex-col justify-start mx-20 mt-12" }>
       {!currentUser && (
         <>
           <h1 className="text-8xl py-10 font-black text-blue-400">
@@ -34,15 +35,23 @@ function Home() {
         </>
       )}
       {currentUser && Array.isArray(posts) && (
+        <div className={darkMode ? "border-y-2 py-20 border-black" : " border-y-2 py-20 "}>
         <ul>
           {posts.map((post) => (
             <li key={post.id}>
-              <p className="font-bold">{currentUser.username }</p>
-              <p>{post.title}</p>
-              <p>{post.body}</p>
+              <div>
+                <div className="flex flex-row">
+                  <p className="font-bold">{currentUser.username }</p>
+                  <p>{post.date}</p>
+                </div>
+                
+                <p className="font-extrabold text-xl">{post.title}</p>
+                <p>{post.body}</p>
+              </div>
             </li>
-          ))}
-        </ul>
+             ))}
+            </ul>
+          </div>
       )}
       {!currentUser && <p>Please log in to see posts</p>}
     </main>

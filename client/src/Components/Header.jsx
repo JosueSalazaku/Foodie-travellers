@@ -12,8 +12,8 @@ function Header({ darkMode, toggleDarkMode }) {
 
   return (
 
-      <nav className="w-full px-20 h-32 flex flex-row justify-between items-center font-semibold dark:bg-black dark:text-white">
-        <Link className="font-extrabold text-2xl dark:text-white" to="/Home">
+      <nav className={darkMode ? "w-full px-20 h-32 flex flex-row justify-between items-center font-semibold  dark:text-white" : "w-full px-20 h-32 flex flex-row justify-between items-center font-semibold text-black"}>
+        <Link className="font-extrabold text-2xl dark:text-dark" to="/Home">
           FOODIE <br /> TRAVELLERS
         </Link>
         <div className="flex gap-10 text-xl">
