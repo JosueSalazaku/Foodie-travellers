@@ -3,6 +3,8 @@ import axios from "axios";
 
 import { AuthContext } from "../Context/authContext.jsx";
 import { useContext } from "react";
+import Avatar from "react-avatar";
+
 
 // eslint-disable-next-line react/prop-types
 function Home({darkMode}) {
@@ -40,11 +42,12 @@ function Home({darkMode}) {
           {posts.map((post) => (
             <li key={post.id}>
               <div>
-                <div className="flex flex-row">
+                <div className="flex flex-row space-x-4 items-center mb-3">
+                <Avatar src={currentUser.avatar} size="30" round />
                   <p className="font-bold">{currentUser.username }</p>
                   <p>{post.date}</p>
                 </div>
-                
+    
                 <p className="font-extrabold text-xl">{post.title}</p>
                 <p>{post.body}</p>
               </div>

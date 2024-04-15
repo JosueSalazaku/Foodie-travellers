@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 
 
 
-function DropDownMenu({ currentUser, logout }) {
+// eslint-disable-next-line react/prop-types
+function DropDownMenu({ currentUser, logout,  }) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
