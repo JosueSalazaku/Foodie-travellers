@@ -6,12 +6,14 @@ import cookieParser from "cookie-parser";
 import authRoutes from "./routes/auth.js";
 import usersRoutes from "./routes/users.js";
 import postRoutes from "./routes/posts.js";
+import db from "./db.js";
 
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 const upload = multer({ dest: "uploads/" });
 
+db();
 
 app.use(cors({
   origin: 'http://localhost:5173',
