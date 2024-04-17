@@ -1,5 +1,5 @@
 import express from "express";
-import cors from "cors"; // Import the cors middleware
+import cors from "cors";
 import multer from "multer";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
@@ -13,12 +13,20 @@ const app = express();
 const port = process.env.PORT || 3000;
 const upload = multer({ dest: "uploads/" });
 
-db();
+app.use(cors()) 
 
-app.use(cors({
-  origin: 'http://localhost:5173',
-  credentials: true
-}));
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "localhost:5173"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+
+
+// app.use(cors({
+//   origin: 'localhost:5173',
+//   credentials: true
+// }));
 
 // Routes
 app.use(express.json());
