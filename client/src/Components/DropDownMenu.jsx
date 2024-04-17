@@ -6,9 +6,7 @@ import { RxBookmark } from "react-icons/rx";
 import { Link } from "react-router-dom";
 
 
-
-// eslint-disable-next-line react/prop-types
-function DropDownMenu({ currentUser, logout  }) {
+function DropDownMenu({ currentUser, logout }) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 

@@ -13,20 +13,11 @@ const app = express();
 const port = process.env.PORT || 3000;
 const upload = multer({ dest: "uploads/" });
 
-app.use(cors()) 
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "localhost:5173"); // update to match the domain you will make the request from
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
-
-
-
-// app.use(cors({
-//   origin: 'localhost:5173',
-//   credentials: true
-// }));
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true
+}));
 
 // Routes
 app.use(express.json());

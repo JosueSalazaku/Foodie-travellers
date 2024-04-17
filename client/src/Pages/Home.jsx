@@ -51,7 +51,7 @@ function Home({darkMode}) {
                   <p className="font-bold">{currentUser.username }</p>
                   <p>{post.date}</p>
                 </div>
-    
+                
                 <p className="font-extrabold text-xl">{post.title}</p>
                 <p>{post.body}</p>
               </div>

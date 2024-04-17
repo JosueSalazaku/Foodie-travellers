@@ -1,7 +1,6 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 
-
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import AuthContextProvider from "./Context/authContext.jsx";
