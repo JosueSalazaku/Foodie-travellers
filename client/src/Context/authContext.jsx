@@ -11,6 +11,8 @@ const AuthContextProvider = ({ children }) => {
 
   const login = async (inputs) => {
     try {
+      const result = await axios.get("http://localhost:3000/api/test");
+      console.log(result);
       const res = await axios.post('http://localhost:3000/api/logIn', inputs);
       setCurrentUser(res.data);
     } catch (error) {
@@ -21,8 +23,10 @@ const AuthContextProvider = ({ children }) => {
 
   const logout = async () => {
     try {
-      const { __reactFiber$2468vcm4mx8, ...inputs } = currentUser || {};
-      await axios.post('http://localhost:3000/api/logOut', inputs);
+ 
+      // const { __reactFiber$2468vcm4mx8, ...inputs } = currentUser || {};
+      // await axios.post('http://localhost:3000/api/logOut', inputs);
+      console.log("paard")
       setCurrentUser(null);
       localStorage.removeItem('user'); // Clear user data from localStorage
     } catch (error) {

@@ -29,6 +29,7 @@ function DropDownMenu({ currentUser, logout  }) {
   const handleLogout = async () => {
     try {
       await logout();
+
     } catch (error) {
       console.error("Logout error:", error);
     }
